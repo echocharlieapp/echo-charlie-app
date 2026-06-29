@@ -4562,7 +4562,7 @@ document.getElementById('settings-back').addEventListener('click', closeSettings
 document.getElementById('settings-save').addEventListener('click', saveSettings);
 // ── AI ASSISTANT ──────────────────────────────────────────────────────────────
 
-const ANTHROPIC_API_KEY = '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';
+let ANTHROPIC_API_KEY = '';
 
 function buildAiPrompt(userInput) {
   const whoLabels   = (settingsDraft.whoOrder   || []).filter(x => !x.startsWith('f'));
@@ -4661,6 +4661,10 @@ document.getElementById('settings-ai-send').addEventListener('click', async () =
   const sendBtn = document.getElementById('settings-ai-send');
   const userInput = input.value.trim();
   if (!userInput || !settingsDraft) return;
+  if (!ANTHROPIC_API_KEY) {
+    showAiStatus('AI nicht verfügbar', true);
+    return;
+  }
 
   input.disabled   = true;
   sendBtn.disabled = true;
@@ -4951,6 +4955,11 @@ async function interpretVoiceCommand() {
   clearTimeout(voiceCmd.abortTimer);
   clearTimeout(voiceCmd.silenceTimer);
   voiceCmd.active = false;
+  if (!ANTHROPIC_API_KEY) {
+    showVoicePill('AI nicht verfügbar');
+    setTimeout(() => showVoicePill('Höre zu…'), 2000);
+    return;
+  }
   showVoicePill('Verstehe…');
 
   const transcript = voiceCmd.buffer.trim();
@@ -5162,6 +5171,7 @@ ShortLabel-Regeln (max 15 Zeichen):
 - Alle section="who".`;
 
 async function callClaudeForTeam(contentMsg) {
+  if (!ANTHROPIC_API_KEY) throw new Error('AI nicht verfügbar');
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -5593,6 +5603,19 @@ function showSyncBanner(msg) {
 
 (async () => {
   try { showLoadingOverlay(); } catch (_) {}
+
+  // Load API key from Supabase before anything else
+  try {
+    const { data: configData } = await db
+      .from('app_config')
+      .select('value')
+      .eq('key', 'anthropic_api_key')
+      .single();
+    ANTHROPIC_API_KEY = configData?.value || '';
+    if (!ANTHROPIC_API_KEY) console.warn('API Key nicht gefunden in app_config');
+  } catch (e) {
+    console.warn('app_config load failed:', e.message);
+  }
 
   try {
     const { data, error } = await db
