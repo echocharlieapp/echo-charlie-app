@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "echo-charlie",
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["-e", "const h=require('http'),f=require('fs'),p=require('path');const port=process.env.PORT||3456;h.createServer((q,r)=>{let fp=p.join('/Users/robinsullivan/Desktop/echo-charlie-app',q.url==='/'?'index.html':q.url);try{const d=f.readFileSync(fp);const m=fp.endsWith('.html')?'text/html':fp.endsWith('.css')?'text/css':fp.endsWith('.js')?'text/javascript':'application/octet-stream';r.writeHead(200,{'Content-Type':m});r.end(d);}catch(e){r.writeHead(404);r.end('Not found');}}).listen(port,()=>console.log('Serving on '+port));"],
+      "port": 3456,
+      "autoPort": true
+    }
+  ]
+}
