@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#141618">
+  <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+    <!-- Panel bg -->
+    <rect width="200" height="1080" fill="#0d0f11"/>
+    <rect x="200" width="340" height="1080" fill="#0d0f11"/>
+    <!-- Logo -->
+    <text x="36" y="44" font-family="sans-serif" font-weight="700" font-size="26" fill="#eceef2">ech</text>
+    <polyline points="76,36 82,36 85,26 88,46 91,26 94,46 97,30 101,36 107,36" fill="none" stroke="#e8407a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Clock -->
+    <text x="960" y="40" font-family="monospace" font-size="28" fill="#eceef2" text-anchor="middle">01:09:36</text>
+    <!-- Nav items -->
+    <rect x="16" y="160" width="168" height="36" rx="6" fill="rgba(232,64,122,0.10)"/>
+    <rect x="0" y="160" width="3" height="36" fill="#e8407a"/>
+    <rect x="16" y="206" width="168" height="36" rx="6" fill="none"/>
+    <rect x="16" y="252" width="168" height="36" rx="6" fill="none"/>
+    <!-- WHO buttons (6) -->
+    <rect x="560" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <rect x="714" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <rect x="868" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <rect x="1022" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <rect x="1176" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <rect x="1330" y="120" width="140" height="140" rx="16" fill="rgba(232,64,122,0.08)" stroke="rgba(232,64,122,0.18)" stroke-width="1"/>
+    <!-- WHAT buttons (7) — colored -->
+    <rect x="560" y="320" width="140" height="140" rx="16" fill="#0891b2"/>
+    <rect x="714" y="320" width="140" height="140" rx="16" fill="#0e7490"/>
+    <rect x="868" y="320" width="140" height="140" rx="16" fill="#0d9488"/>
+    <rect x="1022" y="320" width="140" height="140" rx="16" fill="#0f766e"/>
+    <rect x="1176" y="320" width="140" height="140" rx="16" fill="#2563eb"/>
+    <rect x="1330" y="320" width="140" height="140" rx="16" fill="#1d4ed8"/>
+    <rect x="1484" y="320" width="140" height="140" rx="16" fill="#dc2626"/>
+    <!-- WHERE row 1 (6) -->
+    <rect x="560" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="714" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="868" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="1022" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="1176" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="1330" y="520" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <!-- WHERE row 2 (6) -->
+    <rect x="560" y="674" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="714" y="674" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="868" y="674" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="1022" y="674" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <rect x="1176" y="674" width="140" height="140" rx="16" fill="#1c1f24" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <!-- Live call card -->
+    <rect x="216" y="70" width="308" height="160" rx="12" fill="#1c1f24" stroke="rgba(232,64,122,0.22)" stroke-width="1"/>
+    <rect x="232" y="88" width="60" height="28" rx="6" fill="#e8407a"/>
+    <rect x="308" y="88" width="80" height="28" rx="6" fill="rgba(34,197,94,0.13)" stroke="rgba(34,197,94,0.28)" stroke-width="1"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root {
+    --bg:           #141618;
+    --panel-bg:     #0d0f11;
+    --surface:      #1c1f24;
+    --surface-2:    #252b33;
+    --surface-3:    #2e353f;
+    --border:       rgba(255,255,255,0.07);
+    --border-2:     rgba(255,255,255,0.14);
+    --text-1:       #eceef2;
+    --text-2:       #8899aa;
+    --text-3:       #5a6677;
+    --who-bg:       rgba(232,64,122,0.08);
+    --who-border:   rgba(232,64,122,0.18);
+    --accent:       #e8407a;
+    --accent-muted: rgba(232,64,122,0.10);
+    --urgent:       #ef4444;
+    --work:         #2563eb;
+    --teal:         #0d9488;
+    --cyan:         #0891b2;
+    --online:       #22c55e;
+    --where-chip-bg:   rgba(34,197,94,0.13);
+    --where-chip-bd:   rgba(34,197,94,0.28);
+    --where-chip-text: #4ade80;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    font-family: 'Poppins', system-ui, sans-serif;
+    color: var(--text-1);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    height: 100vh;
+  }
+  @keyframes live-pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%     { opacity:0.45; transform:scale(0.8); }
+  }
+</style>
+</helmet>
+
+<div id="ech-root" data-screen-label="Main Screen" style="width:1920px; height:1080px; overflow:hidden; display:flex; flex-direction:column; background:var(--bg);">
+
+  <!-- HEADER -->
+  <header style="height:52px; background:var(--panel-bg); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 20px; flex-shrink:0;">
+    <div style="width:200px; display:flex; align-items:center; gap:12px; flex-shrink:0;">
+      <button style="background:none; border:none; color:var(--text-3); cursor:pointer; padding:6px; border-radius:6px; display:flex;">
+        <i data-lucide="menu" style="width:18px; height:18px;"></i>
+      </button>
+      <div style="display:flex; flex-direction:column; gap:0; line-height:1;">
+        <div style="display:flex; align-items:center; gap:4px;">
+          <span style="font-family:'Poppins'; font-weight:700; font-size:16px; color:var(--text-1); letter-spacing:-0.03em;">ech</span>
+          <svg viewBox="0 0 40 18" width="40" height="18" style="flex-shrink:0; display:block;">
+            <polyline points="1,10 5,10 7,3 9,16 11,3 13,16 15,6 18.5,10 23.5,10" fill="none" stroke="#e8407a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <polyline points="23.5,10 27,10 29,5 31,14 33,10 36,10 38,10" fill="none" stroke="#e8407a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"></polyline>
+          </svg>
+        </div>
+        <span style="font-size:9px; color:var(--text-3); letter-spacing:0.14em; text-transform:uppercase; font-weight:500;">charlie</span>
+      </div>
+    </div>
+    <div style="flex:1; display:flex; align-items:baseline; justify-content:center; gap:8px;">
+      <span id="ech-clock" style="font-family:'DM Mono',monospace; font-size:28px; font-weight:500; color:var(--text-1); letter-spacing:0.05em; font-variant-numeric:tabular-nums;"></span>
+      <span id="ech-ampm" style="font-family:'DM Mono',monospace; font-size:12px; font-weight:400; color:var(--text-3); letter-spacing:0.1em;"></span>
+    </div>
+    <div style="width:320px; display:flex; align-items:center; justify-content:flex-end; gap:2px; flex-shrink:0;">
+      <div style="display:flex; align-items:center; gap:6px; margin-right:10px;">
+        <span style="font-size:13px; font-weight:500; color:var(--text-2);">Golland_2</span>
+        <div style="width:7px; height:7px; border-radius:50%; background:var(--online);"></div>
+      </div>
+      <div style="width:1px; height:16px; background:var(--border-2); margin:0 6px; flex-shrink:0;"></div>
+      <button style="background:none; border:none; color:var(--text-3); cursor:pointer; padding:7px; border-radius:6px; display:flex;"><i data-lucide="volume-2" style="width:16px; height:16px;"></i></button>
+      <button style="background:none; border:none; cursor:pointer; padding:7px; border-radius:6px; display:flex; position:relative; color:var(--online);">
+        <i data-lucide="mic" style="width:16px; height:16px;"></i>
+        <div style="position:absolute; top:5px; right:5px; width:5px; height:5px; border-radius:50%; background:var(--online); border:1.5px solid var(--panel-bg);"></div>
+      </button>
+      <button style="background:none; border:none; color:var(--text-3); cursor:pointer; padding:7px; border-radius:6px; display:flex;"><i data-lucide="bell" style="width:16px; height:16px;"></i></button>
+      <button style="background:none; border:none; color:var(--text-3); cursor:pointer; padding:7px; border-radius:6px; display:flex;"><i data-lucide="sliders-horizontal" style="width:16px; height:16px;"></i></button>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div style="flex:1; display:flex; overflow:hidden; min-height:0;">
+
+    <!-- NAV SIDEBAR -->
+    <nav style="width:200px; background:var(--panel-bg); border-right:1px solid var(--border); display:flex; flex-direction:column; flex-shrink:0; overflow-y:auto;">
+      <div style="padding:14px 16px 12px; border-bottom:1px solid var(--border);">
+        <div style="font-size:9.5px; color:var(--text-3); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:5px;">Angemeldet als</div>
+        <div style="font-size:11px; color:var(--text-2); word-break:break-all; line-height:1.5; margin-bottom:10px;">support@echo-charlie.app</div>
+        <button style="display:flex; align-items:center; gap:5px; background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:6px; color:var(--text-3); font-size:11px; font-family:'Poppins'; cursor:pointer; padding:4px 9px; line-height:1;">
+          <i data-lucide="log-out" style="width:11px; height:11px;"></i>
+          Abmelden
+        </button>
+      </div>
+      <div style="padding:8px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center;">
+        <span style="font-size:9.5px; color:var(--text-3); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">Kanal</span>
+        <div style="display:flex; align-items:center; gap:5px; margin-left:auto;">
+          <span style="font-size:12px; color:var(--text-1); font-weight:500;">Golland_2</span>
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--online);"></div>
+        </div>
+      </div>
+
+      <div style="padding:6px 0; flex:1; display:flex; flex-direction:column;">
+
+        <!-- ANSICHTEN section header -->
+        <div style="padding:5px 16px 3px; font-size:9px; color:var(--text-3); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">Ansichten</div>
+
+        <div data-nav="Nachrichten" style="display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--accent-muted); border-left:2px solid var(--accent); cursor:pointer;">
+          <i data-lucide="message-square" style="width:15px; height:15px; color:var(--accent); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-1); font-weight:600;">Nachrichten</span>
+        </div>
+        <div data-nav="Warteraum" style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="users" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Warteraum</span>
+        </div>
+        <div data-nav="Kontrollzentrum" style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="radio" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Kontrollzentrum</span>
+        </div>
+
+        <div style="height:1px; background:var(--border); margin:6px 0;"></div>
+        <div style="padding:5px 16px 3px; font-size:9px; color:var(--text-3); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">Konfiguration</div>
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="settings" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Einstellungen</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="tablet" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Geräte</span>
+        </div>
+
+        <div style="height:1px; background:var(--border); margin:6px 0;"></div>
+        <div style="padding:5px 16px 3px; font-size:9px; color:var(--text-3); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">Adminbereich</div>
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="info" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Info</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="shield" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Berechtigungen</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-left:2px solid transparent; cursor:pointer;">
+          <i data-lucide="layout" style="width:15px; height:15px; color:var(--text-3); flex-shrink:0;"></i>
+          <span style="font-size:13px; color:var(--text-2); font-weight:400;">Vorlagen</span>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- CALL BOARD -->
+    <section style="width:340px; background:var(--panel-bg); border-right:1px solid var(--border); display:flex; flex-direction:column; flex-shrink:0; overflow:hidden;">
+      <div style="padding:13px 16px 11px; display:flex; align-items:center; border-bottom:1px solid var(--border); flex-shrink:0; gap:8px;">
+        <span style="font-size:9.5px; font-weight:700; color:var(--text-3); letter-spacing:0.1em; text-transform:uppercase;">Live Calls</span>
+        <div style="display:flex; align-items:center; gap:4px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.2); border-radius:10px; padding:2px 8px; margin-left:auto;">
+          <div style="width:5px; height:5px; border-radius:50%; background:#ef4444; animation:live-pulse 2s ease-in-out infinite;"></div>
+          <span style="font-size:10px; color:#ef4444; font-weight:700;">1 aktiv</span>
+        </div>
+      </div>
+      <div style="flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:10px;">
+
+        <!-- Active card -->
+        <div style="background:var(--surface); border:1px solid rgba(232,64,122,0.22); border-radius:12px; padding:14px; position:relative;">
+          <div style="position:absolute; top:12px; right:12px; display:flex; align-items:center; gap:4px;">
+            <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); animation:live-pulse 1.6s ease-in-out infinite;"></div>
+            <span style="font-size:9.5px; color:var(--accent); font-weight:700; letter-spacing:0.07em;">LIVE</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px; margin-right:52px;">
+            <div style="background:var(--accent); border-radius:7px; padding:5px 12px; font-size:14px; font-weight:700; color:#fff;">DA</div>
+            <i data-lucide="arrow-right" style="width:13px; height:13px; color:var(--text-3); flex-shrink:0;"></i>
+            <div style="background:var(--where-chip-bg); border:1px solid var(--where-chip-bd); border-radius:7px; padding:5px 12px; font-size:14px; font-weight:700; color:var(--where-chip-text);">OP3</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <div style="display:inline-flex; align-items:center; gap:5px; background:var(--teal); border-radius:6px; padding:4px 9px;">
+              <i data-lucide="camera" style="width:11px; height:11px; color:#fff;"></i>
+              <span style="font-size:11px; color:#fff; font-weight:600;">CAM</span>
+            </div>
+            <span style="font-size:11px; color:var(--text-3); margin-left:auto;">vor &lt; 1 min</span>
+            <button style="background:none; border:none; cursor:pointer; color:var(--text-3); display:flex; padding:2px;"><i data-lucide="thumbs-up" style="width:13px; height:13px;"></i></button>
+          </div>
+          <div style="font-size:10px; color:var(--text-3); margin-bottom:10px; display:flex; justify-content:space-between;">
+            <span>support@echo-charlie.app</span><span>So 28.6.26 01:09</span>
+          </div>
+          <div style="height:1px; background:var(--border); margin-bottom:10px;"></div>
+          <div style="display:flex; justify-content:space-around; align-items:center;">
+            <button style="background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; color:var(--text-3); font-family:'Poppins'; padding:3px 8px;">
+              <i data-lucide="bell" style="width:14px; height:14px;"></i><span style="font-size:10px;">Eskalieren</span>
+            </button>
+            <button style="background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; color:var(--text-3); font-family:'Poppins'; padding:3px 8px;">
+              <i data-lucide="trash-2" style="width:14px; height:14px;"></i><span style="font-size:10px;">Löschen</span>
+            </button>
+            <button style="background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; color:var(--text-3); font-family:'Poppins'; padding:3px 8px;">
+              <i data-lucide="message-circle" style="width:14px; height:14px;"></i><span style="font-size:10px;">Kommentieren</span>
+            </button>
+            <button style="background:none; border:none; cursor:pointer; color:var(--text-3); padding:3px; display:flex;"><i data-lucide="more-vertical" style="width:14px; height:14px;"></i></button>
+          </div>
+        </div>
+
+        <!-- Recent card 2 -->
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px; opacity:0.72;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:9px;">
+            <div style="background:var(--accent); border-radius:7px; padding:4px 10px; font-size:13px; font-weight:700; color:#fff;">Dr. A</div>
+            <i data-lucide="arrow-right" style="width:12px; height:12px; color:var(--text-3);"></i>
+            <div style="background:var(--where-chip-bg); border:1px solid var(--where-chip-bd); border-radius:7px; padding:4px 10px; font-size:13px; font-weight:600; color:var(--where-chip-text);">Empfang</div>
+            <span style="margin-left:auto; font-size:10px; color:var(--text-3);">vor 2 min</span>
+          </div>
+          <div style="display:inline-flex; align-items:center; gap:5px; background:var(--work); border-radius:6px; padding:3px 8px;">
+            <i data-lucide="thumbs-up" style="width:10px; height:10px; color:#fff;"></i>
+            <span style="font-size:10px; color:#fff; font-weight:600;">Work</span>
+          </div>
+        </div>
+
+        <!-- Recent card 3 -->
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px; opacity:0.48;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:9px;">
+            <div style="background:var(--accent); border-radius:7px; padding:4px 10px; font-size:13px; font-weight:700; color:#fff;">DH</div>
+            <i data-lucide="arrow-right" style="width:12px; height:12px; color:var(--text-3);"></i>
+            <div style="background:var(--where-chip-bg); border:1px solid var(--where-chip-bd); border-radius:7px; padding:4px 10px; font-size:13px; font-weight:600; color:var(--where-chip-text);">OP1</div>
+            <span style="margin-left:auto; font-size:10px; color:var(--text-3);">vor 4 min</span>
+          </div>
+          <div style="display:inline-flex; align-items:center; gap:5px; background:var(--teal); border-radius:6px; padding:3px 8px;">
+            <i data-lucide="clock" style="width:10px; height:10px; color:#fff;"></i>
+            <span style="font-size:10px; color:#fff; font-weight:600;">in 5m</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ COMPOSER ══ -->
+    <main style="flex:1; overflow-y:auto; padding:36px 40px 40px;">
+
+      <!-- ── WHO BAND ── -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
+          <div style="width:2px; height:13px; background:var(--text-3); border-radius:1px; flex-shrink:0;"></div>
+          <span style="font-size:9.5px; font-weight:700; color:var(--text-3); letter-spacing:0.13em; text-transform:uppercase;">WHO</span>
+        </div>
+
+        <!-- Icon state row: 6 roles + add -->
+        <div style="display:flex; align-items:center; gap:14px;">
+
+          <!-- Dr. A -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="crown" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Dr. A</span>
+            </div>
+          </div>
+
+          <!-- Dr. M -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="user" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Robin Sullivan</span>
+            </div>
+          </div>
+
+          <!-- ZAZ -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="users" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">ZAZ</span>
+            </div>
+          </div>
+
+          <!-- DA -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="user-check" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">DA</span>
+            </div>
+          </div>
+
+          <!-- DH -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="activity" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">DH</span>
+            </div>
+          </div>
+
+          <!-- Admin -->
+          <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="monitor" style="width:34px; height:34px; color:var(--accent);"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:var(--text-2); text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Admin</span>
+            </div>
+          </div>
+
+          <!-- Add -->
+          <div style="width:140px; height:140px; background:rgba(255,255,255,0.02); border:1.5px dashed rgba(255,255,255,0.1); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="plus" style="width:28px; height:28px; color:var(--text-3);"></i>
+          </div>
+
+        </div>
+
+        <!-- Photo variant comparison -->
+        <div style="margin-top:14px; display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+          <div style="width:2px; height:10px; background:var(--text-3); border-radius:1px; opacity:0.5;"></div>
+          <span style="font-size:9px; font-weight:700; color:var(--text-3); text-transform:uppercase; letter-spacing:0.1em;">Photo variant — choose A or B before launch</span>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:20px;">
+
+          <!-- Option A: large circle avatar -->
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
+              <span style="font-size:10px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:0.07em;">A — Circle avatar</span>
+            </div>
+            <div style="display:flex; gap:14px;">
+
+              <!-- A: Dr. A -->
+              <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer; flex-shrink:0;">
+                <div style="width:86px; height:86px; border-radius:50%; overflow:hidden; border:2.5px solid rgba(232,64,122,0.32); flex-shrink:0; background:linear-gradient(145deg,#1e2e4a,#0c1828);">
+                  <svg viewBox="0 0 86 86" width="86" height="86" style="display:block;">
+                    <circle cx="43" cy="31" r="15" fill="rgba(255,255,255,0.22)"></circle>
+                    <path d="M8 86 Q8 58 43 58 Q78 58 78 86Z" fill="rgba(255,255,255,0.16)"></path>
+                  </svg>
+                </div>
+                <div style="height:26px; width:126px; display:flex; align-items:center; justify-content:center;">
+                  <span style="font-size:14px; font-weight:600; color:var(--text-2); text-align:center;">Dr. A</span>
+                </div>
+              </div>
+
+              <!-- A: Dr. M -->
+              <div style="width:140px; height:140px; background:var(--who-bg); border:1px solid var(--who-border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer; flex-shrink:0;">
+                <div style="width:86px; height:86px; border-radius:50%; overflow:hidden; border:2.5px solid rgba(232,64,122,0.32); flex-shrink:0; background:linear-gradient(145deg,#2e1f48,#160e28);">
+                  <svg viewBox="0 0 86 86" width="86" height="86" style="display:block;">
+                    <circle cx="43" cy="31" r="15" fill="rgba(255,255,255,0.22)"></circle>
+                    <path d="M8 86 Q8 58 43 58 Q78 58 78 86Z" fill="rgba(255,255,255,0.16)"></path>
+                  </svg>
+                </div>
+                <div style="height:26px; width:126px; display:flex; align-items:center; justify-content:center;">
+                  <span style="font-size:14px; font-weight:600; color:var(--text-2); text-align:center;">Dr. M</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Separator -->
+          <div style="width:1px; height:168px; background:rgba(255,255,255,0.09); align-self:center; flex-shrink:0; margin:0 8px;"></div>
+
+          <!-- Option B: full-bleed photo -->
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div style="width:6px; height:6px; border-radius:50%; background:#22d3ee; flex-shrink:0;"></div>
+              <span style="font-size:10px; color:#22d3ee; font-weight:700; text-transform:uppercase; letter-spacing:0.07em;">B — Full-bleed photo</span>
+            </div>
+            <div style="display:flex; gap:14px;">
+
+              <!-- B: Dr. A -->
+              <div style="width:140px; height:140px; border-radius:16px; cursor:pointer; flex-shrink:0; position:relative; overflow:hidden; border:1px solid var(--who-border);">
+                <div style="position:absolute; inset:0; background:linear-gradient(170deg,#1e2e4a 0%,#2a204a 55%,#0c1828 100%);">
+                  <svg viewBox="0 0 140 140" width="140" height="140" style="position:absolute;inset:0;opacity:0.55;display:block;">
+                    <circle cx="70" cy="50" r="24" fill="rgba(255,255,255,0.18)"></circle>
+                    <path d="M12 140 Q12 96 70 96 Q128 96 128 140Z" fill="rgba(255,255,255,0.14)"></path>
+                  </svg>
+                </div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(transparent,rgba(0,0,0,0.72));display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;">
+                  <span style="font-size:15px; font-weight:600; color:#fff; text-align:center; text-shadow:0 1px 3px rgba(0,0,0,0.5);">Dr. A</span>
+                </div>
+                <div style="position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--accent);opacity:0.65;"></div>
+              </div>
+
+              <!-- B: Dr. M -->
+              <div style="width:140px; height:140px; border-radius:16px; cursor:pointer; flex-shrink:0; position:relative; overflow:hidden; border:1px solid var(--who-border);">
+                <div style="position:absolute; inset:0; background:linear-gradient(170deg,#2e1f48 0%,#1e3040 55%,#160e28 100%);">
+                  <svg viewBox="0 0 140 140" width="140" height="140" style="position:absolute;inset:0;opacity:0.55;display:block;">
+                    <circle cx="70" cy="50" r="24" fill="rgba(255,255,255,0.18)"></circle>
+                    <path d="M12 140 Q12 96 70 96 Q128 96 128 140Z" fill="rgba(255,255,255,0.14)"></path>
+                  </svg>
+                </div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(transparent,rgba(0,0,0,0.72));display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;">
+                  <span style="font-size:15px; font-weight:600; color:#fff; text-align:center; text-shadow:0 1px 3px rgba(0,0,0,0.5);">Dr. M</span>
+                </div>
+                <div style="position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--accent);opacity:0.65;"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── WHAT BAND ── -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
+          <div style="width:2px; height:13px; background:var(--text-3); border-radius:1px; flex-shrink:0;"></div>
+          <span style="font-size:9.5px; font-weight:700; color:var(--text-3); letter-spacing:0.13em; text-transform:uppercase;">WHAT</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+
+          <!-- next PAT -->
+          <div style="width:140px; height:140px; background:#0891b2; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="door-open" style="width:34px; height:34px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#fff; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">next PAT</span>
+            </div>
+          </div>
+
+          <!-- RX-KO DH -->
+          <div style="width: 140px; height: 140px; background: #0e7490; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; cursor: pointer; flex-shrink: 0">
+            <i data-lucide="download" style="color: #fff; width: 34px; height: 34px"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size: 18px; font-weight: 600; color: #fff; text-align: center; line-height: 1.3; overflow-wrap: break-word; word-break: break-word">RX-KO DH</span>
+            </div>
+          </div>
+
+          <!-- in 5m -->
+          <div style="width:140px; height:140px; background:#0d9488; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="clock" style="width:34px; height:34px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#fff; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">in 5m</span>
+            </div>
+          </div>
+
+          <!-- CAM -->
+          <div style="width:140px; height:140px; background:#0f766e; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="camera" style="width:34px; height:34px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#fff; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">CAM</span>
+            </div>
+          </div>
+
+          <!-- Work -->
+          <div style="width:140px; height:140px; background:#2563eb; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="thumbs-up" style="width:34px; height:34px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#fff; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Work</span>
+            </div>
+          </div>
+
+          <!-- Material -->
+          <div style="width:140px; height:140px; background:#1d4ed8; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="scissors" style="width:34px; height:34px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#fff; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Material</span>
+            </div>
+          </div>
+
+          <!-- SOS -->
+          <div style="width:140px; height:140px; background:#dc2626; border:1px solid rgba(255,100,100,0.2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="alert-triangle" style="width:36px; height:36px; color:#fff;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:18px; font-weight:700; color:#fff; text-align:center; letter-spacing:0.1em;">SOS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── WHERE BAND ── -->
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
+          <div style="width:2px; height:13px; background:var(--text-3); border-radius:1px; flex-shrink:0;"></div>
+          <span style="font-size:9.5px; font-weight:700; color:var(--text-3); letter-spacing:0.13em; text-transform:uppercase;">WHERE</span>
+        </div>
+
+        <!-- Row 1: 6 buttons -->
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+
+          <!-- OP1 -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; flex-shrink:0;">
+            <span style="font-size:40px; font-weight:700; color:#a0b0c0; line-height:1; font-variant-numeric:tabular-nums;">1</span>
+            <div style="height:28px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; letter-spacing:0.04em;">OP1</span>
+            </div>
+          </div>
+
+          <!-- OP2 -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; flex-shrink:0;">
+            <span style="font-size:40px; font-weight:700; color:#a0b0c0; line-height:1; font-variant-numeric:tabular-nums;">2</span>
+            <div style="height:28px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; letter-spacing:0.04em;">OP2</span>
+            </div>
+          </div>
+
+          <!-- OP3 — active call -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid rgba(8,145,178,0.4); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; flex-shrink:0; position:relative;">
+            <div style="position:absolute; top:10px; right:10px; width:8px; height:8px; border-radius:50%; background:var(--accent); border:2px solid var(--surface);"></div>
+            <span style="font-size:40px; font-weight:700; color:#22d3ee; line-height:1; font-variant-numeric:tabular-nums;">3</span>
+            <div style="height:28px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#a0b0c0; letter-spacing:0.04em;">OP3</span>
+            </div>
+          </div>
+
+          <!-- OP4 -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; flex-shrink:0;">
+            <span style="font-size:40px; font-weight:700; color:#a0b0c0; line-height:1; font-variant-numeric:tabular-nums;">4</span>
+            <div style="height:28px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; letter-spacing:0.04em;">OP4</span>
+            </div>
+          </div>
+
+          <!-- RX -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="scan" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">RX</span>
+            </div>
+          </div>
+
+          <!-- Empfang -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="building-2" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Empfang</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: 6 buttons -->
+        <div style="display:flex; align-items:center; gap:14px;">
+
+          <!-- Labor -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="test-tube-2" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Labor</span>
+            </div>
+          </div>
+
+          <!-- OP5-14 -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; flex-shrink:0;">
+            <span style="font-size:26px; font-weight:700; color:#a0b0c0; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">5–14</span>
+            <div style="height:28px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; letter-spacing:0.03em;">OP5–14</span>
+            </div>
+          </div>
+
+          <!-- Lager -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="package" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Lager</span>
+            </div>
+          </div>
+
+          <!-- Röntgen -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="zap" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Röntgen</span>
+            </div>
+          </div>
+
+          <!-- Büro Adm. -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="briefcase" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Büro Adm.</span>
+            </div>
+          </div>
+
+          <!-- Büro ZAZ -->
+          <div style="width:140px; height:140px; background:var(--surface); border:1px solid var(--border-2); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; flex-shrink:0;">
+            <i data-lucide="users" style="width:34px; height:34px; color:#8899aa;"></i>
+            <div style="height:44px; width:126px; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:16px; font-weight:600; color:#8899aa; text-align:center; line-height:1.3; overflow-wrap:break-word; word-break:break-word;">Büro ZAZ</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1920,&quot;height&quot;:1080},&quot;activeNav&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Nachrichten&quot;,&quot;options&quot;:[&quot;Nachrichten&quot;,&quot;Warteraum&quot;,&quot;Kontrollzentrum&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navigation&quot;},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#e8407a&quot;,&quot;options&quot;:[&quot;#e8407a&quot;,&quot;#7c3aed&quot;,&quot;#0891b2&quot;,&quot;#059669&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+
+  _applyAccent() {
+    const color = this.props.accentColor || '#e8407a';
+    const hex   = color.replace('#', '');
+    document.documentElement.style.setProperty('--accent', color);
+    if (hex.length === 6) {
+      const r = parseInt(hex.substring(0,2), 16);
+      const g = parseInt(hex.substring(2,4), 16);
+      const b = parseInt(hex.substring(4,6), 16);
+      document.documentElement.style.setProperty('--accent-muted', 'rgba('+r+','+g+','+b+',0.10)');
+      document.documentElement.style.setProperty('--who-bg',       'rgba('+r+','+g+','+b+',0.08)');
+      document.documentElement.style.setProperty('--who-border',   'rgba('+r+','+g+','+b+',0.18)');
+    }
+    document.querySelectorAll('#ech-root header polyline').forEach(pl => pl.setAttribute('stroke', color));
+  }
+
+  _applyNavActive() {
+    const active = this.props.activeNav || 'Nachrichten';
+    document.querySelectorAll('[data-nav]').forEach(el => {
+      const on = el.dataset.nav === active;
+      el.style.background      = on ? 'var(--accent-muted)' : '';
+      el.style.borderLeftColor = on ? 'var(--accent)'       : 'transparent';
+      const iconEl = el.querySelector('svg') || el.querySelector('i');
+      const textEl = el.querySelector('span');
+      if (iconEl) iconEl.style.color = on ? 'var(--accent)'  : 'var(--text-3)';
+      if (textEl) { textEl.style.color = on ? 'var(--text-1)' : 'var(--text-2)'; textEl.style.fontWeight = on ? '600' : '400'; }
+    });
+  }
+
+  componentDidMount() {
+    const clockEl = document.getElementById('ech-clock');
+    const ampmEl  = document.getElementById('ech-ampm');
+    const tick = () => {
+      const n  = new Date();
+      let   h  = n.getHours();
+      const m  = String(n.getMinutes()).padStart(2, '0');
+      const s  = String(n.getSeconds()).padStart(2, '0');
+      const ap = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      if (clockEl) clockEl.textContent = String(h).padStart(2, '0') + ':' + m + ':' + s;
+      if (ampmEl)  ampmEl.textContent  = ap;
+    };
+    tick();
+    this._timer = setInterval(tick, 1000);
+
+    const root = document.getElementById('ech-root');
+    const applyScale = () => {
+      if (!root) return;
+      const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+      root.style.transform       = 'scale(' + s + ')';
+      root.style.transformOrigin = 'top left';
+      document.body.style.width  = Math.round(1920 * s) + 'px';
+      document.body.style.height = Math.round(1080 * s) + 'px';
+    };
+    applyScale();
+    window.addEventListener('resize', applyScale);
+    this._scaleHandler = applyScale;
+
+    this._applyAccent();
+    const tryIcons = (n) => {
+      if (window.lucide) { window.lucide.createIcons(); this._applyNavActive(); return; }
+      if (n > 0) setTimeout(() => tryIcons(n - 1), 120);
+    };
+    tryIcons(25);
+  }
+
+  componentDidUpdate() {
+    this._applyAccent();
+    if (window.lucide) window.lucide.createIcons();
+    this._applyNavActive();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._timer);
+    if (this._scaleHandler) window.removeEventListener('resize', this._scaleHandler);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
